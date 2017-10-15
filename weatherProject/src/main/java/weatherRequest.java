@@ -1,3 +1,4 @@
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-class dummyFail {
+class weatherRequest {
 
 
     public static void main(String[] args) throws IOException {
@@ -17,16 +18,14 @@ class dummyFail {
         String key = "2428b4cbc243376503343db78f3acc66";
         String dayURL = "http://api.openweathermap.org/data/2.5/weather?id=588409&units=metric&appid=2428b4cbc243376503343db78f3acc66";
         String weeklyURL = "http://api.openweathermap.org/data/2.5/forecast/?id=588409&units=metric&APPID=2428b4cbc243376503343db78f3acc66";
-        dummyFail dummyFail = new dummyFail();
+        weatherRequest dummyFail = new weatherRequest();
         String text = dummyFail.readFile(dummyFail.readHTTP(dayURL));
-        //dummyFail.getInfo(text);
-        //JSObject jsObject = new JSObject();
-        //JSONListAdapter listAdapter = new JSONListAdapter(jsObject, Global.instance());
-        //JSONObject object = new JSONObject(text);
-        //System.out.println(object);
-        //JSONArray array = new JSONArray(object.get("subcatagories"));
+        JSONObject jsonObject = new JSONObject(text);
+        //System.out.println(jsonObject);
+        System.out.println(jsonObject.get("main"));
+        //JSONArray array = jsonObject.names();
         //System.out.println(array);
-
+        //System.out.println(jsonObject.keySet());
 
     }
 
