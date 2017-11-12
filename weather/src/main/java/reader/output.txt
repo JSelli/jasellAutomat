@@ -1,0 +1,24 @@
+3
+{"day1:":"temp_min:2.91, temp_max:5.55","day2:":"temp_min:3.29, temp_max:5.29","day3:":"temp_min:3.55, temp_max:6.82"}
+{"lon":24.75,"lat":59.44}
+5.55
+{"day1:":"temp_min:2.25, temp_max:6.81","day2:":"temp_min:2.93, temp_max:10.36","day3:":"temp_min:8.67, temp_max:10.95"}
+{"lon":-0.13,"lat":51.51}
+6.57
+{"day1:":"temp_min:5.05, temp_max:8.45","day2:":"temp_min:3.55, temp_max:9.66","day3:":"temp_min:1.45, temp_max:10.37"}
+{"lon":2.35,"lat":48.85}
+1.32
+{"day1:":"temp_min:-1.04, temp_max:1.71","day2:":"temp_min:-0.22, temp_max:7.59","day3:":"temp_min:-0.7, temp_max:2.13"}
+{"lon":37.62,"lat":55.75}
+-1.07
+{"day1:":"temp_min:-1.55, temp_max:2.38","day2:":"temp_min:-0.48, temp_max:4.02","day3:":"temp_min:2.83, temp_max:7.0"}
+{"lon":18.06,"lat":59.33}
+1.17
+{"day1:":"temp_min:0.83, temp_max:5.18","day2:":"temp_min:2.86, temp_max:8.96","day3:":"temp_min:6.58, temp_max:9.17"}
+{"lon":12.57,"lat":55.68}
+16
+{"day1:":"temp_min:2.4, temp_max:13.03","day2:":"temp_min:0.11, temp_max:13.24","day3:":"temp_min:5.75, temp_max:13.4"}
+{"lon":-88.76,"lat":35.92}
+16.47
+{"day1:":"temp_min:1.9, temp_max:11.55","day2:":"temp_min:-1.6, temp_max:10.79","day3:":"temp_min:-2.48, temp_max:11.6"}
+{"lon":7.25,"lat":43.7}
