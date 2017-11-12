@@ -30,13 +30,13 @@ public class Main {
         System.out.println(currentWeather.getName());
     }
 
-    private static boolean isCity(String town) throws IOException {
+    public static boolean isCity(String town) throws IOException {
         ArrayList<String> cities = Main.allCities();
         return cities.contains(town);
     }
 
-    private static ArrayList<String> allCities() throws IOException {
-        String fileName = "C:\\Users\\Jaagup\\IdeaProjects\\weatherReport1\\weather\\src\\main\\java\\city_list.txt";
+    public static ArrayList<String> allCities() throws IOException {
+        String fileName = "C:\\Users\\Jaagup\\IdeaProjects\\jasellAutomat\\weather\\src\\main\\java\\reader\\city_list.txt";
         ArrayList<String> cities = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String line = br.readLine();

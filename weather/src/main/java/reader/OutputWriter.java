@@ -31,6 +31,7 @@ public class OutputWriter {
         ArrayList<String> output = new ArrayList<>();
 
         for (String city : cities) {
+            System.out.println(city);
             output.add(city);
             CurrentWeather cw = new CurrentWeather(city);
             output.add("Current weather is " + cw.getTemp().toString());

@@ -7,7 +7,13 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class InputReader {
+class InputReader {
+
+    private ArrayList<String> citiesList;
+
+    InputReader() throws IOException {
+        this.citiesList = readInput();
+    }
 
     private ArrayList<String> readInput() throws IOException {
         ArrayList<String> citiesList = new ArrayList<>();
@@ -22,6 +28,10 @@ public class InputReader {
                 line = br.readLine();
             }
         }
+        return citiesList;
+    }
+
+    ArrayList<String> getCitiesList() {
         return citiesList;
     }
 }

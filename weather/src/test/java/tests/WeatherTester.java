@@ -4,6 +4,7 @@ import org.json.JSONException;
 import org.junit.Test;
 import weather.CurrentWeather;
 import weather.Main;
+import weather.WeeklyWeather;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -80,5 +81,11 @@ public class WeatherTester {
         currentWeather.getTemp();
 
         verify(currentWeather).getTemp();
+    }
+
+    @Test
+    public void testWeekly() throws IOException, JSONException {
+        WeeklyWeather weeklyWeather = new WeeklyWeather();
+        System.out.println(weeklyWeather.getWeather());
     }
 }

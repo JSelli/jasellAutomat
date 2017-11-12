@@ -1,16 +1,13 @@
-package weather;
+package reader;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.URL;
 
 
-class ReadAPI {
+public class ReadAPI {
 
     private String key = "2428b4cbc243376503343db78f3acc66";
 
@@ -22,15 +19,21 @@ class ReadAPI {
         String weeklyURL = "http://api.openweathermap.org/data/2.5/forecast/?id=588409&units=metric&APPID=2428b4cbc243376503343db78f3acc66";
         ReadAPI ReadAPI = new ReadAPI();
         String text = ReadAPI.readFile(ReadAPI.readHTTP(dayURL));
-        //weather.ReadAPI.getInfo(text);
+        //reader.ReadAPI.getInfo(text);
         //JSObject jsObject = new JSObject();
         //JSONListAdapter listAdapter = new JSONListAdapter(jsObject, Global.instance());
         JSONObject object = new JSONObject(text);
         System.out.println(object);
     }
 
-    JSONObject getJSONName(String town) throws IOException, JSONException {
+    public JSONObject getJSONNameDaily(String town) throws IOException, JSONException {
         String dayURL = "http://api.openweathermap.org/data/2.5/weather?q=" + town + "&units=metric&appid=" + key;
+        String text = readFile(readHTTP(dayURL));
+        return new JSONObject(text);
+    }
+
+    public JSONObject getJSONNameForecast(String town) throws IOException, JSONException {
+        String dayURL = "http://api.openweathermap.org/data/2.5/forecast/?q=" + town + "&units=metric&appid=" + key;
         String text = readFile(readHTTP(dayURL));
         return new JSONObject(text);
     }
@@ -42,7 +45,11 @@ class ReadAPI {
     }
 
     private InputStream readHTTP(String url) throws IOException {
-        return new URL(url).openStream();
+        try {
+            return new URL(url).openStream();
+        } catch (FileNotFoundException e) {
+            return null;
+        }
     }
 
     private String readFile(InputStream inputStream) throws IOException {

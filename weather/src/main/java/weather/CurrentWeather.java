@@ -2,6 +2,7 @@ package weather;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import reader.ReadAPI;
 
 import java.io.IOException;
 
@@ -9,9 +10,14 @@ public class CurrentWeather implements WeatherRequest {
 
     private JSONObject jsonObject;
 
+    public CurrentWeather() throws IOException, JSONException {
+        ReadAPI reader = new ReadAPI();
+        jsonObject = reader.getJSONNameDaily("Tallinn");
+    }
+
     public CurrentWeather(String name) throws IOException, JSONException {
         ReadAPI reader = new ReadAPI();
-        jsonObject = reader.getJSONName(name);
+        jsonObject = reader.getJSONNameDaily(name);
     }
 
     @Override
