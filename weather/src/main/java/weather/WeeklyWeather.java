@@ -6,6 +6,7 @@ import org.json.JSONObject;
 import reader.ReadAPI;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 public class WeeklyWeather implements WeatherRequest {
 
@@ -25,13 +26,17 @@ public class WeeklyWeather implements WeatherRequest {
     public Object getWeather() throws JSONException {
         JSONArray object = (JSONArray) jsonObject.get("list");
 
-        for (int i = 0; i < 40; i++) {
+        Double min;
+        Double max;
+
+        HashMap<String, Double[]> days = new HashMap<>();
+
+        for (int i = 0; i < 24; i += 8) {
             JSONObject jO = new JSONObject(object.get(i).toString());
-            System.out.println(jO.get("main"));
+            JSONObject jsonObject = new JSONObject(jO.get("main").toString());
+            min = Double.parseDouble(jsonObject.get("temp_min").toString());
+            max = Double.parseDouble(jsonObject.get("temp_max").toString());
         }
-
-
-
         return object;
     }
 
