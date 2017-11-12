@@ -3,6 +3,7 @@ package tests;
 import org.json.JSONException;
 import org.junit.Test;
 import weather.CurrentWeather;
+import weather.Main;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,6 +11,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import static junit.framework.TestCase.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 
 public class WeatherTester {
@@ -54,47 +57,28 @@ public class WeatherTester {
     }
 
     @Test
-    public void testLowestTemp() {
-    }
-
-    @Test
-    public void testHighestTemp() {
-    }
-
-    @Test
     public void testCoordinates() throws IOException, JSONException {
         CurrentWeather currentWeather = new CurrentWeather("Tallinn");
         assertEquals(currentWeather.getCoordinates().toString(), "{\"lon\":24.75,\"lat\":59.44}");
     }
 
     @Test
-    public void testCoordinateInput() {
-    }
-    // Checks if the coordinates are valid
-
-    @Test
-    public void testCoordinatesMatchWeather() {
+    public void cityExists() throws IOException {
+        String city = "Tallinn";
+        assertEquals(Main.isCity(city), true);
     }
 
     @Test
-    public void JSONformat() {
+    public void cityDoesNotExist() throws IOException {
+        String city = "Obviously not a city";
+        assertEquals(Main.isCity(city), false);
     }
 
     @Test
-    public void cityExists() {
+    public void testTemp() throws JSONException, IOException {
+        CurrentWeather currentWeather = mock(CurrentWeather.class);
+        currentWeather.getTemp();
+
+        verify(currentWeather).getTemp();
     }
-
-    @Test
-    public void newRecord() {
-    }
-
-    @Test
-    public void temperatureFormat() {
-    }
-
-    @Test
-    public void cityNameFormat() {
-    }
-
-
 }
