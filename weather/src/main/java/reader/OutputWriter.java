@@ -19,14 +19,18 @@ public class OutputWriter {
         this.outputUtil = new OutputUtil(readAPI);
     }
 
+    public void writeOutputWithPath(ArrayList<String> text, Path path) {
+
+    }
+
     private void writeOutput(ArrayList<String> text) throws IOException {
-        Path file = Paths.get("C:\\Users\\Jaagup\\IdeaProjects\\jasellAutomat\\weather\\src\\main\\java\\writing\\output.txt");
+        Path file = Paths.get("weather/src/main/java/writing/output.txt");
         Files.write(file, text, Charset.forName("UTF-8"));
 
     }
 
     private void writeOutput(ArrayList<String> text, String name) throws IOException {
-        Path file = Paths.get("C:\\Users\\Jaagup\\IdeaProjects\\jasellAutomat\\weather\\src\\main\\java\\writing\\output\\" + name + ".txt");
+        Path file = Paths.get("weather/src/main/java/writing/output/" + name + ".txt");
         Files.write(file, text, Charset.forName("UTF-8"));
     }
 
