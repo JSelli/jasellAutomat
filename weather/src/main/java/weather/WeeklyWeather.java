@@ -12,18 +12,24 @@ public class WeeklyWeather implements WeatherRequest {
 
     private JSONObject jsonObject;
 
-    public WeeklyWeather() throws IOException, JSONException {
-        ReadAPI reader = new ReadAPI();
+    public WeeklyWeather(String data) throws JSONException {
+        jsonObject = new JSONObject(data);
+    }
+
+    public WeeklyWeather(ReadAPI reader) throws IOException, JSONException {
         jsonObject = reader.getJSONNameForecast("Tallinn");
     }
 
-    public WeeklyWeather(String name) throws IOException, JSONException {
-        ReadAPI reader = new ReadAPI();
+    public WeeklyWeather(ReadAPI reader, String name) throws IOException, JSONException {
         jsonObject = reader.getJSONNameForecast(name);
     }
 
+    public WeeklyWeather(ReadAPI reader, int code) throws IOException, JSONException {
+        jsonObject = reader.getJSONCodeForecast(code);
+    }
+
     @Override
-    public Object getWeather() throws JSONException {
+    public Object getTemp() throws JSONException {
         if (jsonObject != null) {
             JSONArray object = (JSONArray) jsonObject.get("list");
             return new JSONObject(getAverages(object));
@@ -41,11 +47,7 @@ public class WeeklyWeather implements WeatherRequest {
     }
 
     @Override
-    public Object getTemp() throws JSONException {
-        if (jsonObject != null) {
-            JSONArray object = (JSONArray) jsonObject.get("list");
-            return "";
-        }
+    public Object getWeather() throws JSONException {
         return null;
     }
 

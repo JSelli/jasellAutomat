@@ -1,50 +1,15 @@
 Tallinn
  Coordinates are lon:24.75 lat:59.44
- Forecast for the following days is: day 1 temperatures are temp_min:-1.53 temp_max:0.53; day 2 temperatures are temp_min:-0.69 temp_max:1.77; day 3 temperatures are temp_min:-1.13 temp_max:1.39.
- Current weather is 0°C
+ Forecast for the following days is: day 1 temperatures are temp_min:-1.13 temp_max:0.68; day 2 temperatures are temp_min:-0.69 temp_max:1.77; day 3 temperatures are temp_min:-3.06 temp_max:-0.01.
+ Current weather is 1°C
 
 London
  Coordinates are lon:-0.13 lat:51.51
- Forecast for the following days is: day 1 temperatures are temp_min:-0.55 temp_max:9.72; day 2 temperatures are temp_min:-3.27 temp_max:3.95; day 3 temperatures are temp_min:6.26 temp_max:8.1.
- Current weather is 1.45°C
+ Forecast for the following days is: day 1 temperatures are temp_min:-0.55 temp_max:10.09; day 2 temperatures are temp_min:-3.27 temp_max:7.27; day 3 temperatures are temp_min:6.26 temp_max:10.6.
+ Current weather is 7.7°C
 
 Paris
  Coordinates are lon:2.35 lat:48.86
- Forecast for the following days is: day 1 temperatures are temp_min:2.34 temp_max:8.55; day 2 temperatures are temp_min:3.02 temp_max:6.01; day 3 temperatures are temp_min:2.76 temp_max:6.2.
- Current weather is 2.25°C
-
-Moscow
- Coordinates are lon:-117 lat:46.73
- Forecast for the following days is: day 1 temperatures are temp_min:-7.28 temp_max:2.16; day 2 temperatures are temp_min:3.03 temp_max:4.05; day 3 temperatures are temp_min:2.84 temp_max:5.36.
- Current weather is -2.65°C
-
-Stockholm
- Coordinates are lon:18.07 lat:59.33
- Forecast for the following days is: day 1 temperatures are temp_min:-5.6 temp_max:-1.95; day 2 temperatures are temp_min:-4.66 temp_max:0.57; day 3 temperatures are temp_min:-6.06 temp_max:-2.78.
- Current weather is -4.59°C
-
-Copenhagen
- Coordinates are lon:12.57 lat:55.69
- Forecast for the following days is: day 1 temperatures are temp_min:0.8 temp_max:2.96; day 2 temperatures are temp_min:-0.31 temp_max:3.53; day 3 temperatures are temp_min:0.21 temp_max:1.76.
- Current weather is -0.82°C
-
-Milan
- Coordinates are lon:9.19 lat:45.47
- Forecast for the following days is: day 1 temperatures are temp_min:-5.48 temp_max:8.08; day 2 temperatures are temp_min:-6.11 temp_max:0.6; day 3 temperatures are temp_min:-6.25 temp_max:2.24.
- Current weather is 4.51°C
-
-Nice
- Coordinates are lon:7.27 lat:43.7
- Forecast for the following days is: day 1 temperatures are temp_min:-5.05 temp_max:11.01; day 2 temperatures are temp_min:-5.32 temp_max:4.41; day 3 temperatures are temp_min:-4.47 temp_max:5.17.
- Current weather is 8°C
-
-New York City
- Coordinates are 
- Forecast for the following days is: 
- Current weather is °C
-
-Tartu
- Coordinates are lon:26.72 lat:58.37
- Forecast for the following days is: day 1 temperatures are temp_min:-3.48 temp_max:0.85; day 2 temperatures are temp_min:-6.01 temp_max:-0.55; day 3 temperatures are temp_min:-11.88 temp_max:-3.71.
- Current weather is 0°C
+ Forecast for the following days is: day 1 temperatures are temp_min:1.68 temp_max:8.55; day 2 temperatures are temp_min:3.02 temp_max:5.47; day 3 temperatures are temp_min:2.76 temp_max:8.45.
+ Current weather is 3.75°C
 

@@ -4,11 +4,11 @@ import org.json.JSONException;
 
 interface WeatherRequest {
 
-    Object getWeather() throws JSONException;
+    Object getTemp() throws JSONException;
 
     Object getCoordinates() throws JSONException;
 
-    Object getTemp() throws JSONException;
+    Object getWeather() throws JSONException;
 
     Object getPressure() throws JSONException;
 

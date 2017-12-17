@@ -6,7 +6,7 @@ package reader;
         import java.io.InputStreamReader;
         import java.net.MalformedURLException;
 
-class JsonDecoder {
+public class JsonDecoder {
 
     String readFile(InputStream inputStream) throws IOException {
         BufferedReader bufferedReader;

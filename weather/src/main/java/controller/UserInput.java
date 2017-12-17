@@ -3,19 +3,20 @@ package controller;
 import org.json.JSONException;
 import reader.CityChecker;
 import reader.OutputUtil;
+import reader.ReadAPI;
 
 import java.io.IOException;
 import java.util.Scanner;
 
 
-class UserInput {
+public class UserInput {
 
     private CityChecker cityChecker;
     private OutputUtil outputUtil;
 
-    UserInput() throws IOException, JSONException {
+    UserInput(ReadAPI readAPI) throws IOException, JSONException {
         this.cityChecker = new CityChecker();
-        this.outputUtil = new OutputUtil();
+        this.outputUtil = new OutputUtil(readAPI);
     }
 
     void getUserInput() throws IOException, JSONException {

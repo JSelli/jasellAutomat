@@ -39,8 +39,8 @@ public class ReadAPI {
         }
     }
 
-    public JSONObject getJSONCode(String code) throws IOException, JSONException {
-        String dayURL = "http://api.openweathermap.org/data/2.5/weather?id=" + code + "&units=metric&appid=" + key;
+    public JSONObject getJSONCodeDaily(int code) throws IOException, JSONException {
+        String dayURL = "http://api.openweathermap.org/data/2.5/weather?id=" + String.valueOf(code) + "&units=metric&appid=" + key;
         try {
             String text = decoder.readFile(readHTTP(dayURL));
             return new JSONObject(text);
@@ -49,8 +49,8 @@ public class ReadAPI {
         }
     }
 
-    public JSONObject getJsonCodeForecast(String code) throws IOException, JSONException {
-        String dayURL = "http://api.openweathermap.org/data/2.5/forecast/?id=" + code + "&units=metric&appid=" + key;
+    public JSONObject getJSONCodeForecast(int code) throws IOException, JSONException {
+        String dayURL = "http://api.openweathermap.org/data/2.5/forecast/?id=" + String.valueOf(code) + "&units=metric&appid=" + key;
         try {
             String text = decoder.readFile(readHTTP(dayURL));
             return new JSONObject(text);

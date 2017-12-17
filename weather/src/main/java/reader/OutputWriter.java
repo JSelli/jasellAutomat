@@ -14,9 +14,9 @@ public class OutputWriter {
     private final InputFileReader inputFileReader;
     private OutputUtil outputUtil;
 
-    public OutputWriter(CityChecker cityChecker) throws IOException, JSONException {
-        this.inputFileReader = new InputFileReader(cityChecker);
-        this.outputUtil = new OutputUtil();
+    public OutputWriter(ReadAPI readAPI, InputFileReader inputFileReader) throws IOException, JSONException {
+        this.inputFileReader = inputFileReader;
+        this.outputUtil = new OutputUtil(readAPI);
     }
 
     private void writeOutput(ArrayList<String> text) throws IOException {

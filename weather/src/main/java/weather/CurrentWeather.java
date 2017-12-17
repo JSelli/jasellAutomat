@@ -5,25 +5,37 @@ import org.json.JSONObject;
 import reader.ReadAPI;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class CurrentWeather implements WeatherRequest {
 
     private JSONObject jsonObject;
 
-    public CurrentWeather() throws IOException, JSONException {
-        ReadAPI reader = new ReadAPI();
+    public CurrentWeather(String data) throws JSONException {
+        if (!Objects.equals(data, "")) {
+            jsonObject = new JSONObject(data);
+        } else {
+            jsonObject = null;
+        }
+    }
+
+    public CurrentWeather(ReadAPI reader) throws IOException, JSONException {
         jsonObject = reader.getJSONNameDaily("Tallinn");
     }
 
-    public CurrentWeather(String name) throws IOException, JSONException {
-        ReadAPI reader = new ReadAPI();
+    public CurrentWeather(ReadAPI reader, String name) throws IOException, JSONException {
         jsonObject = reader.getJSONNameDaily(name);
     }
 
+    public CurrentWeather(ReadAPI reader, int code) throws IOException, JSONException {
+        jsonObject = reader.getJSONCodeDaily(code);
+    }
+
     @Override
-    public Object getWeather() throws JSONException {
+    public Object getTemp() throws JSONException {
         if (jsonObject != null) {
-            return jsonObject.get("weather");
+            JSONObject temp = (JSONObject) jsonObject.get("main");
+            return temp.get("temp");
         }
         return "";
     }
@@ -37,10 +49,9 @@ public class CurrentWeather implements WeatherRequest {
     }
 
     @Override
-    public Object getTemp() throws JSONException {
+    public Object getWeather() throws JSONException {
         if (jsonObject != null) {
-            JSONObject temp = (JSONObject) jsonObject.get("main");
-            return temp.get("temp");
+            return jsonObject.get("weather");
         }
         return "";
     }

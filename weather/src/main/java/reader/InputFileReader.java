@@ -2,32 +2,28 @@ package reader;
 
 import org.json.JSONException;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
 
-class InputFileReader {
+public class InputFileReader {
 
     private ArrayList<String> citiesList;
     private CityChecker cityChecker;
 
-    InputFileReader(CityChecker cityChecker) throws IOException, JSONException {
+    public InputFileReader(CityChecker cityChecker) throws IOException, JSONException {
         this.cityChecker = cityChecker;
         this.citiesList = readInput();
     }
 
     private ArrayList<String> readInput() throws IOException, JSONException {
         ArrayList<String> citiesList = new ArrayList<>();
-
-        try (BufferedReader br = new BufferedReader(new FileReader(
-                "C:\\Users\\Jaagup\\IdeaProjects\\jasellAutomat\\weather\\src\\main\\java\\writing\\input.txt"))) {
-            String line = br.readLine();
-            while (line != null) {
-                if (cityChecker.isCity(line)) {
-                    citiesList.add(line);
-                }
-                line = br.readLine();
+        List<String> lines = Files.readAllLines(Paths.get("weather/src/main/java/writing/input.txt"));
+        for (String city : lines) {
+            if (cityChecker.isCity(city)) {
+                citiesList.add(city);
             }
         }
         return citiesList;

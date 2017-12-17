@@ -12,17 +12,23 @@ import java.util.List;
 
 public class OutputUtil {
 
+    private ReadAPI readAPI;
+
+    public OutputUtil(ReadAPI readAPI) {
+        this.readAPI = readAPI;
+    }
+
     public HashMap<String, String> outputFormatter(String city) throws IOException, JSONException {
 
         HashMap<String, String> data = new HashMap<>();
         List<String> cityData = new ArrayList<>();
-        CurrentWeather cw = new CurrentWeather(city);
-        WeeklyWeather ww = new WeeklyWeather(city);
+        CurrentWeather cw = new CurrentWeather(readAPI, city);
+        WeeklyWeather ww = new WeeklyWeather(readAPI, city);
 
         cityData.add(city + "\n");
         cityData.add("Coordinates are " + cw.getCoordinates().toString().replace(",", " ").
                 replace("{", "").replace("}", "").replace("\"", "") + "\n");
-        String forecast = weeklyDataFormatter(ww.getWeather().toString());
+        String forecast = weeklyDataFormatter(ww.getTemp().toString());
         cityData.add("Forecast for the following days is: " + forecast + "\n");
         cityData.add("Current weather is " + cw.getTemp().toString() + "°C" + "\n");
         String output = cityData.toString().replaceAll("\\[", "")
