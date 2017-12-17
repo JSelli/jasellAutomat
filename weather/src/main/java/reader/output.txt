@@ -1,48 +1,40 @@
 Tallinn
-Current weather is 3
-Forecast is {"day1:":"temp_min:2.91, temp_max:5.55","day2:":"temp_min:3.29, temp_max:5.29","day3:":"temp_min:3.55, temp_max:6.82"}
-Coordinates are {"lon":24.75,"lat":59.44}
-
-
+Current weather is 0°C
+Forecast is {"day2":"temp_min:-3.94, temp_max:0.85","day3":"temp_min:-1.13, temp_max:1.79","day1":"temp_min:-5.11, temp_max:1.54"}
+Coordinates are lon:24.75,lat:59.44
 London
-Current weather is 5.55
-Forecast is {"day1:":"temp_min:2.25, temp_max:6.81","day2:":"temp_min:2.93, temp_max:10.36","day3:":"temp_min:8.67, temp_max:10.95"}
-Coordinates are {"lon":-0.13,"lat":51.51}
-
-
+Current weather is -0.84°C
+Forecast is {"day2":"temp_min:-3.77, temp_max:3.92","day3":"temp_min:-2.69, temp_max:6.28","day1":"temp_min:-2.41, temp_max:8.58"}
+Coordinates are lon:-0.13,lat:51.51
 Paris
-Current weather is 6.57
-Forecast is {"day1:":"temp_min:5.05, temp_max:8.45","day2:":"temp_min:3.55, temp_max:9.66","day3:":"temp_min:1.45, temp_max:10.37"}
-Coordinates are {"lon":2.35,"lat":48.85}
-
-
+Current weather is -0.25°C
+Forecast is {"day2":"temp_min:-0.12, temp_max:7.63","day3":"temp_min:0.36, temp_max:5.59","day1":"temp_min:0.52, temp_max:9.66"}
+Coordinates are lon:2.35,lat:48.86
 Moscow
-Current weather is 1.31
-Forecast is {"day1:":"temp_min:-1.04, temp_max:1.71","day2:":"temp_min:-0.22, temp_max:7.59","day3:":"temp_min:-0.7, temp_max:2.13"}
-Coordinates are {"lon":37.62,"lat":55.75}
-
-
+Current weather is -2.67°C
+Forecast is {"day2":"temp_min:0.73, temp_max:4.03","day3":"temp_min:2.88, temp_max:5.75","day1":"temp_min:-11.24, temp_max:-1.01"}
+Coordinates are lon:-117,lat:46.73
 Stockholm
-Current weather is -1.07
-Forecast is {"day1:":"temp_min:-1.57, temp_max:2.38","day2:":"temp_min:-0.48, temp_max:4.02","day3:":"temp_min:2.83, temp_max:7.0"}
-Coordinates are {"lon":18.06,"lat":59.33}
-
-
+Current weather is -4.07°C
+Forecast is {"day2":"temp_min:-3.34, temp_max:-0.09","day3":"temp_min:-2.37, temp_max:2.53","day1":"temp_min:-6.43, temp_max:-2.94"}
+Coordinates are lon:18.07,lat:59.33
 Copenhagen
-Current weather is 0.97
-Forecast is {"day1:":"temp_min:0.36, temp_max:5.18","day2:":"temp_min:2.86, temp_max:8.96","day3:":"temp_min:6.58, temp_max:9.17"}
-Coordinates are {"lon":12.57,"lat":55.68}
-
-
+Current weather is -2.07°C
+Forecast is {"day2":"temp_min:2.11, temp_max:3.75","day3":"temp_min:1.47, temp_max:3.38","day1":"temp_min:-1.17, temp_max:3.31"}
+Coordinates are lon:12.57,lat:55.69
 Milan
-Current weather is 16
-Forecast is {"day1:":"temp_min:2.4, temp_max:13.03","day2:":"temp_min:0.11, temp_max:13.24","day3:":"temp_min:5.75, temp_max:13.4"}
-Coordinates are {"lon":-88.76,"lat":35.92}
-
-
+Current weather is -2.01°C
+Forecast is {"day2":"temp_min:-6.11, temp_max:0.6","day3":"temp_min:-6.25, temp_max:2.24","day1":"temp_min:-5.48, temp_max:5.73"}
+Coordinates are lon:9.19,lat:45.47
 Nice
-Current weather is 16.47
-Forecast is {"day1:":"temp_min:1.9, temp_max:11.54","day2:":"temp_min:-1.6, temp_max:10.79","day3:":"temp_min:-2.48, temp_max:11.6"}
-Coordinates are {"lon":7.25,"lat":43.7}
-
-
+Current weather is 3.39°C
+Forecast is {"day2":"temp_min:-5.32, temp_max:4.41","day3":"temp_min:-4.47, temp_max:5.17","day1":"temp_min:-5.05, temp_max:9.23"}
+Coordinates are lon:7.27,lat:43.7
+New York City
+Current weather is °C
+Forecast is 
+Coordinates are 
+Tartu
+Current weather is 0°C
+Forecast is {"day2":"temp_min:-4.79, temp_max:-2.25","day3":"temp_min:-5.14, temp_max:-0.97","day1":"temp_min:-2.35, temp_max:1.38"}
+Coordinates are lon:26.72,lat:58.37

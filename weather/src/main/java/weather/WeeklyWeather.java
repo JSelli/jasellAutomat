@@ -24,8 +24,11 @@ public class WeeklyWeather implements WeatherRequest {
 
     @Override
     public Object getWeather() throws JSONException {
-        JSONArray object = (JSONArray) jsonObject.get("list");
-        return new JSONObject(getAverages(object));
+        if (jsonObject != null) {
+            JSONArray object = (JSONArray) jsonObject.get("list");
+            return new JSONObject(getAverages(object));
+        }
+        return "";
     }
 
     @Override
@@ -85,7 +88,7 @@ public class WeeklyWeather implements WeatherRequest {
                 }
             }
             String nums = "temp_min:" + String.valueOf(min) + ", " + "temp_max:" + String.valueOf(max);
-            days.put("day" + String.valueOf(i / 8 + 1) + ":", nums);
+            days.put("day" + String.valueOf(i / 8 + 1), nums);
         }
 
         return days;

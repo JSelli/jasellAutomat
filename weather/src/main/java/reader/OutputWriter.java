@@ -13,8 +13,10 @@ import java.util.ArrayList;
 
 public class OutputWriter {
 
-    OutputWriter() {
+    private CityChecker cityChecker;
 
+    private OutputWriter(CityChecker cityChecker) {
+        this.cityChecker = cityChecker;
     }
 
     private void writeOutput(ArrayList<String> text) throws IOException {
@@ -25,8 +27,8 @@ public class OutputWriter {
 
 
     private void writeToFile() throws IOException, JSONException {
-        InputReader inputReader = new InputReader();
-        ArrayList<String> cities = inputReader.getCitiesList();
+        InputFileReader inputFileReader = new InputFileReader(cityChecker);
+        ArrayList<String> cities = inputFileReader.getCitiesList();
 
         ArrayList<String> output = new ArrayList<>();
 
@@ -34,18 +36,19 @@ public class OutputWriter {
             System.out.println(city);
             output.add(city);
             CurrentWeather cw = new CurrentWeather(city);
-            output.add("Current weather is " + cw.getTemp().toString());
+            output.add("Current weather is " + cw.getTemp().toString() + "°C");
             WeeklyWeather ww = new WeeklyWeather(city);
             output.add("Forecast is " + ww.getWeather().toString());
-            output.add("Coordinates are " + cw.getCoordinates().toString());
-            output.add("\n");
+            output.add("Coordinates are " + cw.getCoordinates().toString().
+                    replace("{", "").replace("}", "").replace("\"", ""));
         }
 
         writeOutput(output);
     }
 
     public static void main(String[] args) throws IOException, JSONException {
-        OutputWriter outputWriter = new OutputWriter();
+        CityChecker cityChecker = new CityChecker();
+        OutputWriter outputWriter = new OutputWriter(cityChecker);
         outputWriter.writeToFile();
     }
 }
