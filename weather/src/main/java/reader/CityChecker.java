@@ -11,7 +11,6 @@ public class CityChecker {
     private List<String> listOfCities = allCities();
 
     public CityChecker() throws IOException {
-
     }
 
     public boolean isCity(String town) throws IOException {
@@ -19,7 +18,7 @@ public class CityChecker {
     }
 
     private ArrayList<String> allCities() throws IOException {
-        String fileName = "C:\\Users\\Jaagup\\IdeaProjects\\jasellAutomat\\weather\\src\\main\\java\\reader\\city_list.txt";
+        String fileName = "C:\\Users\\Jaagup\\IdeaProjects\\jasellAutomat\\weather\\src\\main\\java\\writing\\city_list.txt";
         ArrayList<String> cities = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String line = br.readLine();

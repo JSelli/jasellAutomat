@@ -30,7 +30,7 @@ public class CurrentWeather implements WeatherRequest {
 
     @Override
     public Object getCoordinates() throws JSONException {
-        if(jsonObject != null) {
+        if (jsonObject != null) {
             return jsonObject.get("coord");
         }
         return "";
@@ -47,8 +47,11 @@ public class CurrentWeather implements WeatherRequest {
 
     @Override
     public Object getPressure() throws JSONException {
-        JSONObject temp = (JSONObject) jsonObject.get("main");
-        return temp.get("pressure");
+        if (jsonObject != null) {
+            JSONObject temp = (JSONObject) jsonObject.get("main");
+            return temp.get("pressure");
+        }
+        return "";
     }
 
     @Override
@@ -61,18 +64,27 @@ public class CurrentWeather implements WeatherRequest {
 
     @Override
     public Object getCountry() throws JSONException {
-        JSONObject temp = (JSONObject) jsonObject.get("sys");
-        return temp.get("country");
+        if (jsonObject != null) {
+            JSONObject temp = (JSONObject) jsonObject.get("sys");
+            return temp.get("country");
+        }
+        return "";
     }
 
     @Override
     public Object getID() throws JSONException {
-        return jsonObject.get("id");
+        if (jsonObject != null) {
+            return jsonObject.get("id");
+        }
+        return "";
     }
 
     @Override
     public Object getHumidity() throws JSONException {
-        JSONObject temp = (JSONObject) jsonObject.get("main");
-        return temp.get("humidity");
+        if (jsonObject != null) {
+            JSONObject temp = (JSONObject) jsonObject.get("main");
+            return temp.get("humidity");
+        }
+        return "";
     }
 }

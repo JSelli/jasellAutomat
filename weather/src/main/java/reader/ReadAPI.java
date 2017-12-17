@@ -27,7 +27,6 @@ public class ReadAPI {
         } catch (MalformedURLException e) {
             return null;
         }
-
     }
 
     public JSONObject getJSONNameForecast(String town) throws IOException, JSONException {
@@ -40,10 +39,24 @@ public class ReadAPI {
         }
     }
 
-    JSONObject getJSONCode(String code) throws IOException, JSONException {
+    public JSONObject getJSONCode(String code) throws IOException, JSONException {
         String dayURL = "http://api.openweathermap.org/data/2.5/weather?id=" + code + "&units=metric&appid=" + key;
-        String text = decoder.readFile(readHTTP(dayURL));
-        return new JSONObject(text);
+        try {
+            String text = decoder.readFile(readHTTP(dayURL));
+            return new JSONObject(text);
+        } catch (MalformedURLException e) {
+            return null;
+        }
+    }
+
+    public JSONObject getJsonCodeForecast(String code) throws IOException, JSONException {
+        String dayURL = "http://api.openweathermap.org/data/2.5/forecast/?id=" + code + "&units=metric&appid=" + key;
+        try {
+            String text = decoder.readFile(readHTTP(dayURL));
+            return new JSONObject(text);
+        } catch (MalformedURLException e) {
+            return null;
+        }
     }
 
     private InputStream readHTTP(String url) throws IOException {

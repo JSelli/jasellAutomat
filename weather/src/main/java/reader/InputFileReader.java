@@ -21,7 +21,7 @@ class InputFileReader {
         ArrayList<String> citiesList = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(
-                "C:\\Users\\Jaagup\\IdeaProjects\\jasellAutomat\\weather\\src\\main\\java\\reader\\input.txt"))) {
+                "C:\\Users\\Jaagup\\IdeaProjects\\jasellAutomat\\weather\\src\\main\\java\\writing\\input.txt"))) {
             String line = br.readLine();
             while (line != null) {
                 if (cityChecker.isCity(line)) {

@@ -32,12 +32,20 @@ public class WeeklyWeather implements WeatherRequest {
     }
 
     @Override
-    public Object getCoordinates() {
-        return null;
+    public Object getCoordinates() throws JSONException {
+        if (jsonObject != null) {
+            JSONObject temp = (JSONObject) jsonObject.get("city");
+            return temp.get("coord");
+        }
+        return "";
     }
 
     @Override
-    public Object getTemp() {
+    public Object getTemp() throws JSONException {
+        if (jsonObject != null) {
+            JSONArray object = (JSONArray) jsonObject.get("list");
+            return "";
+        }
         return null;
     }
 
@@ -47,18 +55,30 @@ public class WeeklyWeather implements WeatherRequest {
     }
 
     @Override
-    public Object getName() {
-        return null;
+    public Object getName() throws JSONException {
+        if (jsonObject != null) {
+            JSONObject temp = (JSONObject) jsonObject.get("city");
+            return temp.get("name");
+        }
+        return "";
     }
 
     @Override
-    public Object getCountry() {
-        return null;
+    public Object getCountry() throws JSONException {
+        if (jsonObject != null) {
+            JSONObject temp = (JSONObject) jsonObject.get("city");
+            return temp.get("country");
+        }
+        return "";
     }
 
     @Override
-    public Object getID() {
-        return null;
+    public Object getID() throws JSONException {
+        if (jsonObject != null) {
+            JSONObject temp = (JSONObject) jsonObject.get("city");
+            return temp.get("id");
+        }
+        return "";
     }
 
     @Override
