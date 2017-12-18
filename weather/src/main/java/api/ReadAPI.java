@@ -6,8 +6,10 @@ import org.json.JSONObject;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.UnknownHostException;
 
 
 public class ReadAPI {
@@ -61,8 +63,17 @@ public class ReadAPI {
 
     private InputStream readHTTP(String url) throws IOException {
         try {
-            return new URL(url).openStream();
+            HttpURLConnection con = (HttpURLConnection) new URL(url).openConnection();
+            con.connect();
+            if (con.getResponseCode() == 200) {
+                return new URL(url).openStream();
+            } else {
+                return null;
+            }
         } catch (FileNotFoundException e) {
+            return null;
+        } catch (UnknownHostException e) {
+            System.out.println("No connection!");
             return null;
         }
     }

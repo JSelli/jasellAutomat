@@ -30,7 +30,7 @@ public class OutputUtil {
         cityData.add("Coordinates are " + cw.getCoordinates().toString().replace(",", " ").
                 replace("{", "").replace("}", "").replace("\"", "") + "\n");
         String forecast = weeklyDataFormatter(ww.getTemp().toString());
-        cityData.add("Forecast for the following days is: " + forecast + "\n");
+        cityData.add("Forecast for the following days is: \n" + forecast + "\n");
         cityData.add("Current weather is " + cw.getTemp().toString() + "°C" + "\n");
         String output = cityData.toString().replaceAll("\\[", "")
                 .replaceAll("]", "").replaceAll(",", "");
@@ -43,9 +43,9 @@ public class OutputUtil {
         StringBuilder sb = new StringBuilder();
         try {
             JSONObject jsonObject = new JSONObject(data);
-            sb.append("day 1 temperatures are ").append(jsonObject.get("day1")).append(";").append(" ");
-            sb.append("day 2 temperatures are ").append(jsonObject.get("day2")).append(";").append(" ");
-            sb.append("day 3 temperatures are ").append(jsonObject.get("day3")).append(".");
+            sb.append("  day 1 temperatures are ").append(jsonObject.get("day1")).append(";").append("\n");
+            sb.append("  day 2 temperatures are ").append(jsonObject.get("day2")).append(";").append("\n");
+            sb.append("  day 3 temperatures are ").append(jsonObject.get("day3")).append(".");
             return sb.toString();
         } catch (JSONException e) {
             return "";

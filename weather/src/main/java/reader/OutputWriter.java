@@ -34,6 +34,7 @@ public class OutputWriter {
             ArrayList<String> output = new ArrayList<>();
             output.add(String.valueOf(outputUtil.outputFormatter(city).values()).replaceAll("\\[", "").replaceAll("]", ""));
             Path file = Paths.get("weather/src/main/java/writing/output/" + city + ".txt");
+            System.out.println("Writing to : " + file.toString());
             writeOutput(output, file);
         }
     }

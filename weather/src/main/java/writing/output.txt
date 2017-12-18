@@ -1,5 +1,32 @@
 Tallinn
  Coordinates are lon:24.75 lat:59.44
- Forecast for the following days is: day 1 temperatures are temp_min:0.61 temp_max:2.75; day 2 temperatures are temp_min:-2.24 temp_max:0.88; day 3 temperatures are temp_min:1.11 temp_max:3.55.
+ Forecast for the following days is: 
+  day 1 temperatures are temp_min:0.61 temp_max:2.75;
+  day 2 temperatures are temp_min:-2.24 temp_max:1.11;
+  day 3 temperatures are temp_min:1.83 temp_max:3.55.
  Current weather is 1°C
+
+London
+ Coordinates are lon:-0.13 lat:51.51
+ Forecast for the following days is: 
+  day 1 temperatures are temp_min:-3.85 temp_max:7.12;
+  day 2 temperatures are temp_min:2.52 temp_max:8.64;
+  day 3 temperatures are temp_min:8.17 temp_max:9.86.
+ Current weather is 5.44°C
+
+Tartu
+ Coordinates are lon:26.72 lat:58.37
+ Forecast for the following days is: 
+  day 1 temperatures are temp_min:-3.27 temp_max:-0.05;
+  day 2 temperatures are temp_min:-2.36 temp_max:-1.01;
+  day 3 temperatures are temp_min:-2.21 temp_max:-0.43.
+ Current weather is 0°C
+
+Elva
+ Coordinates are lon:26.41 lat:58.22
+ Forecast for the following days is: 
+  day 1 temperatures are temp_min:-2.25 temp_max:0.43;
+  day 2 temperatures are temp_min:-2.76 temp_max:-0.08;
+  day 3 temperatures are temp_min:-1.52 temp_max:-0.02.
+ Current weather is 0°C
 

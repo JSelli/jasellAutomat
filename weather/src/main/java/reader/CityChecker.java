@@ -8,9 +8,10 @@ import java.util.List;
 
 public class CityChecker {
 
-    private List<String> listOfCities = allCities();
+    private List<String> listOfCities;
 
     public CityChecker() throws IOException {
+        this.listOfCities = allCities();
     }
 
     public boolean isCity(String town) throws IOException {

@@ -37,8 +37,6 @@ public class FileReadingMocks {
         Path file = Paths.get("weather/java/tests/fileReading/exampleCity.json");
         outputWriter.writeToFile(file);
         Mockito.verify(inputFileReader).readInput(file);
-        Mockito.verify(readAPI);
         Mockito.verifyZeroInteractions(readAPI);
-
     }
 }
