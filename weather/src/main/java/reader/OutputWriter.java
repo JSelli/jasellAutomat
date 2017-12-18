@@ -1,5 +1,6 @@
 package reader;
 
+import api.ReadAPI;
 import org.json.JSONException;
 
 import java.io.IOException;
@@ -19,38 +20,29 @@ public class OutputWriter {
         this.outputUtil = new OutputUtil(readAPI);
     }
 
-    public void writeOutputWithPath(ArrayList<String> text, Path path) {
-
-    }
-
-    private void writeOutput(ArrayList<String> text) throws IOException {
-        Path file = Paths.get("weather/src/main/java/writing/output.txt");
-        Files.write(file, text, Charset.forName("UTF-8"));
-
-    }
-
-    private void writeOutput(ArrayList<String> text, String name) throws IOException {
-        Path file = Paths.get("weather/src/main/java/writing/output/" + name + ".txt");
+    private void writeOutput(ArrayList<String> text, Path file) throws IOException {
         Files.write(file, text, Charset.forName("UTF-8"));
     }
 
-    public void writeToMultipleFiles() throws IOException, JSONException {
-        ArrayList<String> cities = inputFileReader.getCitiesList();
+    public void writeToMultipleFiles(Path path) throws IOException, JSONException {
+        ArrayList<String> cities = inputFileReader.readInput(path);
         for (String city : cities) {
             ArrayList<String> output = new ArrayList<>();
             output.add(String.valueOf(outputUtil.outputFormatter(city).values()).replaceAll("\\[", "").replaceAll("]", ""));
-            writeOutput(output, city);
+            Path file = Paths.get("weather/src/main/java/writing/output/" + city + ".txt");
+            writeOutput(output, file);
         }
     }
 
-    public void writeToFile() throws IOException, JSONException {
-        ArrayList<String> cities = inputFileReader.getCitiesList();
+    public void writeToFile(Path path) throws IOException, JSONException {
+        ArrayList<String> cities = inputFileReader.readInput(path);
+        Path file = Paths.get("weather/src/main/java/writing/output.txt");
 
         ArrayList<String> output = new ArrayList<>();
         for (String city : cities) {
             output.add(String.valueOf(outputUtil.outputFormatter(city).values()).replaceAll("\\[", "").replaceAll("]", ""));
         }
-        writeOutput(output);
+        writeOutput(output, file);
     }
 
 

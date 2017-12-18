@@ -3,7 +3,7 @@ package weather;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import reader.ReadAPI;
+import api.ReadAPI;
 
 import java.io.IOException;
 import java.util.HashMap;

@@ -4,7 +4,7 @@ import org.json.JSONException;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
-import reader.ReadAPI;
+import api.ReadAPI;
 import weather.CurrentWeather;
 import weather.WeeklyWeather;
 

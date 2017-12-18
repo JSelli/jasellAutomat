@@ -4,7 +4,7 @@ import org.json.JSONException;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,14 +13,14 @@ public class InputFileReader {
     private ArrayList<String> citiesList;
     private CityChecker cityChecker;
 
-    public InputFileReader(CityChecker cityChecker) throws IOException, JSONException {
+    public InputFileReader(CityChecker cityChecker, Path path) throws IOException, JSONException {
         this.cityChecker = cityChecker;
-        this.citiesList = readInput();
+        this.citiesList = readInput(path);
     }
 
-    private ArrayList<String> readInput() throws IOException, JSONException {
+    public ArrayList<String> readInput(Path path) throws IOException, JSONException {
         ArrayList<String> citiesList = new ArrayList<>();
-        List<String> lines = Files.readAllLines(Paths.get("weather/src/main/java/writing/input.txt"));
+        List<String> lines = Files.readAllLines(path);
         for (String city : lines) {
             if (cityChecker.isCity(city)) {
                 citiesList.add(city);

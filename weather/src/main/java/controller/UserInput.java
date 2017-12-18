@@ -3,7 +3,7 @@ package controller;
 import org.json.JSONException;
 import reader.CityChecker;
 import reader.OutputUtil;
-import reader.ReadAPI;
+import api.ReadAPI;
 
 import java.io.IOException;
 import java.util.Scanner;
