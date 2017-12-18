@@ -1,20 +1,25 @@
 package controller;
 
+import api.ReadAPI;
 import org.json.JSONException;
 import reader.CityChecker;
 import reader.OutputUtil;
-import api.ReadAPI;
+import reader.OutputWriter;
 
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 
-public class UserInput {
+class UserInput {
 
     private CityChecker cityChecker;
     private OutputUtil outputUtil;
+    private OutputWriter outputWriter;
 
-    UserInput(ReadAPI readAPI) throws IOException, JSONException {
+    UserInput(ReadAPI readAPI, OutputWriter outputWriter) throws IOException, JSONException {
+        this.outputWriter = outputWriter;
         this.cityChecker = new CityChecker();
         this.outputUtil = new OutputUtil(readAPI);
     }
@@ -28,8 +33,10 @@ public class UserInput {
                 if (scanner.hasNext()) {
                     town = scanner.nextLine();
                     if (cityChecker.isCity(town)) {
+                        Path path = Paths.get("weather/src/main/java/writing/userOutput/" + town + ".txt");
+                        outputWriter.writeToFile(path, town);
                         System.out.println(outputUtil.outputFormatter(town).values());
-                    } else if(town.equals("q")) {
+                    } else if (town.equals("q")) {
                         break;
                     } else {
                         System.out.println("Not a city!");

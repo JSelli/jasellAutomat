@@ -1,0 +1,5 @@
+Tallinn
+ Coordinates are lon:24.75 lat:59.44
+ Forecast for the following days is: day 1 temperatures are temp_min:0.61 temp_max:2.75; day 2 temperatures are temp_min:-2.24 temp_max:0.88; day 3 temperatures are temp_min:1.11 temp_max:3.55.
+ Current weather is 1°C
+

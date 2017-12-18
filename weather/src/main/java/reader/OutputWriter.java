@@ -12,8 +12,12 @@ import java.util.ArrayList;
 
 public class OutputWriter {
 
-    private final InputFileReader inputFileReader;
+    private InputFileReader inputFileReader = null;
     private OutputUtil outputUtil;
+
+    public OutputWriter(ReadAPI readAPI) {
+        this.outputUtil = new OutputUtil(readAPI);
+    }
 
     public OutputWriter(ReadAPI readAPI, InputFileReader inputFileReader) throws IOException, JSONException {
         this.inputFileReader = inputFileReader;
@@ -36,14 +40,17 @@ public class OutputWriter {
 
     public void writeToFile(Path path) throws IOException, JSONException {
         ArrayList<String> cities = inputFileReader.readInput(path);
-        Path file = Paths.get("weather/src/main/java/writing/output.txt");
-
+        path = Paths.get("weather/src/main/java/writing/output.txt");
         ArrayList<String> output = new ArrayList<>();
         for (String city : cities) {
             output.add(String.valueOf(outputUtil.outputFormatter(city).values()).replaceAll("\\[", "").replaceAll("]", ""));
         }
-        writeOutput(output, file);
+        writeOutput(output, path);
     }
 
-
+    public void writeToFile(Path path, String town) throws IOException, JSONException {
+        ArrayList<String> output = new ArrayList<>();
+        output.add(String.valueOf(outputUtil.outputFormatter(town).values()).replaceAll("\\[", "").replaceAll("]", ""));
+        writeOutput(output, path);
+    }
 }
